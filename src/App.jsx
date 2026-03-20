@@ -8,12 +8,11 @@ import Patients from './pages/Patients';
 import Billing from './pages/Billing';
 import Inventory from './pages/Inventory';
 
-// Placeholder components for pages
 const Placeholder = ({ name }) => (
   <div className="card h-[calc(100vh-120px)] flex items-center justify-center">
     <div className="text-center">
       <h2 className="text-3xl font-bold text-gray-800 mb-2">{name}</h2>
-      <p className="text-gray-500 max-w-md mx-auto">This module is part of the implementation plan and will be populated with functional components following the Stitch design patterns.</p>
+      <p className="text-gray-500 max-w-md mx-auto">This module is coming soon.</p>
     </div>
   </div>
 );

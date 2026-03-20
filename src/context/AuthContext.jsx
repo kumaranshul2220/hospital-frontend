@@ -10,19 +10,17 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            // Potentially verify token or fetch user 'me' endpoint
-            fetchCurrentUser(token);
+            fetchCurrentUser();
         } else {
             setLoading(false);
         }
     }, []);
 
-    const fetchCurrentUser = async (token) => {
+    const fetchCurrentUser = async () => {
         try {
-            // apiClient interceptor auto-attaches the token header
             const response = await api.get('/auth/me');
             setUser(response.data);
-        } catch (err) {
+        } catch {
             localStorage.removeItem('token');
         } finally {
             setLoading(false);
