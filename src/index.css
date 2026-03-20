@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00868F;
+  --color-primary-light: #E6F4F5;
+  --color-primary-dark: #006D75;
+  --color-background: #F8F9FA;
+
+  --color-status-success-bg: #E6F4EA;
+  --color-status-success-text: #1E4620;
+  --color-status-error-bg: #FCE8E6;
+  --color-status-error-text: #A50E0E;
+  --color-status-warning-bg: #FFF4E5;
+  --color-status-warning-text: #664B00;
+}
+
+body {
+  @apply bg-background text-gray-900 font-sans antialiased;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-5 transition-all hover:shadow-md;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white py-2 px-4 rounded-lg font-medium transition-colors hover:bg-primary-dark active:scale-[0.98];
+  }
+
+  .status-badge {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .status-success {
+    @apply bg-status-success-bg text-status-success-text;
+  }
+
+  .status-error {
+    @apply bg-status-error-bg text-status-error-text;
+  }
+
+  .status-warning {
+    @apply bg-status-warning-bg text-status-warning-text;
+  }
+}
